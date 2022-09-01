@@ -1,0 +1,587 @@
+[
+    {
+        "amount": 29,
+        "_id": "5ff4502ac966fc00157985c4",
+        "name": "Business Introductions",
+        "main": "Emails",
+        "createdAt": "2021-01-05T11:40:26.382Z",
+        "updatedAt": "2021-03-30T11:27:33.404Z",
+        "__v": 0
+    },
+    {
+        "amount": 21,
+        "_id": "5ff9d96f5a38a2001534897a",
+        "name": "Investments ",
+        "main": "Emails",
+        "createdAt": "2021-01-09T16:27:27.634Z",
+        "updatedAt": "2021-03-08T14:35:59.703Z",
+        "__v": 0
+    },
+    {
+        "amount": 20,
+        "_id": "5ff9d9835a38a2001534897b",
+        "name": "Reports ",
+        "main": "Emails",
+        "createdAt": "2021-01-09T16:27:47.245Z",
+        "updatedAt": "2021-02-26T16:29:20.279Z",
+        "__v": 0
+    },
+    {
+        "amount": 24,
+        "_id": "5ff9d99e5a38a2001534897c",
+        "name": "Follow Ups ",
+        "main": "Emails",
+        "createdAt": "2021-01-09T16:28:14.159Z",
+        "updatedAt": "2021-02-26T16:29:27.973Z",
+        "__v": 0
+    },
+    {
+        "amount": 21,
+        "_id": "5ff9d9b45a38a2001534897d",
+        "name": "Advertisement ",
+        "main": "Emails",
+        "createdAt": "2021-01-09T16:28:36.005Z",
+        "updatedAt": "2021-03-08T14:46:39.974Z",
+        "__v": 0
+    },
+    {
+        "amount": 21,
+        "_id": "5ff9dbc55a38a2001534897e",
+        "name": "Collaborations ",
+        "main": "Emails",
+        "createdAt": "2021-01-09T16:37:25.004Z",
+        "updatedAt": "2021-02-26T16:30:06.367Z",
+        "__v": 0
+    },
+    {
+        "amount": 20,
+        "_id": "5ff9f6d5d1608300155ced49",
+        "name": "Updates & News ",
+        "main": "Emails",
+        "createdAt": "2021-01-09T18:32:53.285Z",
+        "updatedAt": "2021-03-21T15:41:03.256Z",
+        "__v": 0
+    },
+    {
+        "amount": 116,
+        "_id": "5ffaa3e806d89b0015623707",
+        "name": "YouTube",
+        "main": "Comments",
+        "createdAt": "2021-01-10T06:51:20.928Z",
+        "updatedAt": "2021-04-18T08:48:19.525Z",
+        "__v": 0
+    },
+    {
+        "amount": 64,
+        "_id": "5ffaa3ff06d89b0015623708",
+        "name": "Facebook",
+        "main": "Comments",
+        "createdAt": "2021-01-10T06:51:43.333Z",
+        "updatedAt": "2021-03-24T13:52:08.093Z",
+        "__v": 0
+    },
+    {
+        "amount": 40,
+        "_id": "5ffaa43a06d89b0015623709",
+        "name": "Instagram",
+        "main": "Comments",
+        "createdAt": "2021-01-10T06:52:42.070Z",
+        "updatedAt": "2021-03-25T18:25:09.805Z",
+        "__v": 0
+    },
+    {
+        "amount": 72,
+        "_id": "5ffaa7e706d89b001562370a",
+        "name": "Twitch",
+        "main": "Comments",
+        "createdAt": "2021-01-10T07:08:23.965Z",
+        "updatedAt": "2021-04-08T16:26:24.076Z",
+        "__v": 0
+    },
+    {
+        "amount": 44,
+        "_id": "5ffaa80206d89b001562370c",
+        "name": "Twitter",
+        "main": "Comments",
+        "createdAt": "2021-01-10T07:08:50.391Z",
+        "updatedAt": "2021-03-24T13:47:36.486Z",
+        "__v": 0
+    },
+    {
+        "amount": 11,
+        "_id": "5ffad7828533a00015701b2f",
+        "name": "Generate Interest ",
+        "main": "Emails",
+        "createdAt": "2021-01-10T10:31:30.544Z",
+        "updatedAt": "2021-02-26T16:30:31.836Z",
+        "__v": 0
+    },
+    {
+        "amount": 20,
+        "_id": "5ffad8048533a00015701b30",
+        "name": "Event Invitation ",
+        "main": "Emails",
+        "createdAt": "2021-01-10T10:33:40.298Z",
+        "updatedAt": "2021-02-26T16:34:00.895Z",
+        "__v": 0
+    },
+    {
+        "amount": 38,
+        "_id": "5ffad8878533a00015701b31",
+        "name": "Meeting & Scheduling ",
+        "main": "Emails",
+        "createdAt": "2021-01-10T10:35:51.811Z",
+        "updatedAt": "2021-02-26T16:34:17.926Z",
+        "__v": 0
+    },
+    {
+        "amount": 21,
+        "_id": "5ffad9068533a00015701b32",
+        "name": "Launch ",
+        "main": "Emails",
+        "createdAt": "2021-01-10T10:37:58.757Z",
+        "updatedAt": "2021-03-08T14:11:48.323Z",
+        "__v": 0
+    },
+    {
+        "amount": 0,
+        "_id": "5ffadad68533a00015701b37",
+        "name": "LinkedIn",
+        "main": "Comments",
+        "createdAt": "2021-01-10T10:45:42.955Z",
+        "updatedAt": "2021-01-10T10:45:42.955Z",
+        "__v": 0
+    },
+    {
+        "amount": 4,
+        "_id": "5ffadb7e8533a00015701b38",
+        "name": "Freelancers",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T10:48:30.863Z",
+        "updatedAt": "2021-03-18T12:49:44.765Z",
+        "__v": 0
+    },
+    {
+        "amount": 74,
+        "_id": "5ffae0e08533a00015701b3b",
+        "name": "Music",
+        "main": "Comments",
+        "createdAt": "2021-01-10T11:11:28.319Z",
+        "updatedAt": "2021-03-31T10:30:15.327Z",
+        "__v": 0
+    },
+    {
+        "amount": 15,
+        "_id": "5ffae2798533a00015701b3d",
+        "name": "News & Portals",
+        "main": "Comments",
+        "createdAt": "2021-01-10T11:18:17.847Z",
+        "updatedAt": "2021-03-15T11:58:55.111Z",
+        "__v": 0
+    },
+    {
+        "amount": 55,
+        "_id": "5ffae2c08533a00015701b3e",
+        "name": "Food",
+        "main": "Comments",
+        "createdAt": "2021-01-10T11:19:28.952Z",
+        "updatedAt": "2021-03-15T07:43:05.893Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae2d58533a00015701b3f",
+        "name": "Trip Advisor",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:19:49.176Z",
+        "updatedAt": "2021-03-14T12:34:31.844Z",
+        "__v": 0
+    },
+    {
+        "amount": 5,
+        "_id": "5ffae2dd8533a00015701b40",
+        "name": "Amazon",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:19:57.647Z",
+        "updatedAt": "2021-03-18T13:08:21.921Z",
+        "__v": 0
+    },
+    {
+        "amount": 2,
+        "_id": "5ffae2e68533a00015701b41",
+        "name": "Hotels",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:20:06.620Z",
+        "updatedAt": "2021-03-15T12:11:30.438Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae2fb8533a00015701b43",
+        "name": "Fashion",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:20:27.279Z",
+        "updatedAt": "2021-03-14T12:53:32.682Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae3078533a00015701b44",
+        "name": "Ebay",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:20:39.298Z",
+        "updatedAt": "2021-03-14T12:56:09.600Z",
+        "__v": 0
+    },
+    {
+        "amount": 0,
+        "_id": "5ffae3258533a00015701b45",
+        "name": "Consumer ",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:21:09.741Z",
+        "updatedAt": "2021-01-10T11:21:09.741Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae34a8533a00015701b46",
+        "name": "Food & Restaurants",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:21:46.536Z",
+        "updatedAt": "2021-03-14T13:03:11.333Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae3598533a00015701b47",
+        "name": "Pubs & Bars",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:22:01.974Z",
+        "updatedAt": "2021-03-14T13:08:21.557Z",
+        "__v": 0
+    },
+    {
+        "amount": 5,
+        "_id": "5ffae41a8533a00015701b48",
+        "name": "Approach",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:25:14.964Z",
+        "updatedAt": "2021-03-21T13:28:32.814Z",
+        "__v": 0
+    },
+    {
+        "amount": 42,
+        "_id": "5ffae4408533a00015701b49",
+        "name": "Sports and fitness",
+        "main": "Comments",
+        "createdAt": "2021-01-10T11:25:52.455Z",
+        "updatedAt": "2021-03-24T14:20:24.329Z",
+        "__v": 0
+    },
+    {
+        "amount": 4,
+        "_id": "5ffae4588533a00015701b4a",
+        "name": "Movies & TV",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:26:16.740Z",
+        "updatedAt": "2021-03-15T12:14:50.871Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae4648533a00015701b4b",
+        "name": "Rental Services",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:26:28.636Z",
+        "updatedAt": "2021-03-14T14:03:19.926Z",
+        "__v": 0
+    },
+    {
+        "amount": 2,
+        "_id": "5ffae4828533a00015701b4c",
+        "name": "Product ",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:26:58.523Z",
+        "updatedAt": "2021-03-15T07:30:10.389Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae4f48533a00015701b4d",
+        "name": "Streaming Services",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:28:52.022Z",
+        "updatedAt": "2021-03-14T13:43:36.848Z",
+        "__v": 0
+    },
+    {
+        "amount": 0,
+        "_id": "5ffae51e8533a00015701b4e",
+        "name": "Mobile & Internet",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:29:34.408Z",
+        "updatedAt": "2021-01-10T11:31:40.989Z",
+        "__v": 0
+    },
+    {
+        "amount": 3,
+        "_id": "5ffae59a8533a00015701b4f",
+        "name": "Software & Hardware",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:31:38.617Z",
+        "updatedAt": "2021-03-18T12:09:04.850Z",
+        "__v": 0
+    },
+    {
+        "amount": 0,
+        "_id": "5ffae6358533a00015701b51",
+        "name": "Automotive",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:34:13.861Z",
+        "updatedAt": "2021-01-10T11:34:13.861Z",
+        "__v": 0
+    },
+    {
+        "amount": 7,
+        "_id": "5ffae7378533a00015701b53",
+        "name": "Dating",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:38:31.874Z",
+        "updatedAt": "2021-03-18T13:03:20.888Z",
+        "__v": 0
+    },
+    {
+        "amount": 7,
+        "_id": "5ffae7868533a00015701b54",
+        "name": "Re-Connecting",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:39:50.224Z",
+        "updatedAt": "2021-03-20T16:44:00.851Z",
+        "__v": 0
+    },
+    {
+        "amount": 0,
+        "_id": "5ffae7928533a00015701b55",
+        "name": "Introduction",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:40:02.387Z",
+        "updatedAt": "2021-01-10T11:42:56.485Z",
+        "__v": 0
+    },
+    {
+        "amount": 0,
+        "_id": "5ffae8158533a00015701b56",
+        "name": "Commendation",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:42:13.659Z",
+        "updatedAt": "2021-01-10T11:42:13.659Z",
+        "__v": 0
+    },
+    {
+        "amount": 4,
+        "_id": "5ffae8b58533a00015701b57",
+        "name": "Resolving Disputes",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:44:53.356Z",
+        "updatedAt": "2021-03-18T13:31:46.365Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae93a8533a00015701b58",
+        "name": "Questions",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:47:06.523Z",
+        "updatedAt": "2021-03-19T15:52:28.328Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae9488533a00015701b59",
+        "name": "Dealing g",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:47:20.727Z",
+        "updatedAt": "2021-03-03T14:05:48.402Z",
+        "__v": 0
+    },
+    {
+        "amount": 2,
+        "_id": "5ffae9978533a00015701b5a",
+        "name": "Advertising",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:48:39.182Z",
+        "updatedAt": "2021-03-18T12:35:08.866Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffae9d88533a00015701b5b",
+        "name": "Collaborations",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:49:44.894Z",
+        "updatedAt": "2021-03-15T08:34:35.808Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffaeaa48533a00015701b5d",
+        "name": "Updates & News",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:53:08.056Z",
+        "updatedAt": "2021-03-18T12:33:14.596Z",
+        "__v": 0
+    },
+    {
+        "amount": 2,
+        "_id": "5ffaeb06ad51430015e81081",
+        "name": "Event Invitation",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:54:46.335Z",
+        "updatedAt": "2021-03-18T12:21:08.086Z",
+        "__v": 0
+    },
+    {
+        "amount": 9,
+        "_id": "5ffaeb16ad51430015e81082",
+        "name": "Meet-ups",
+        "main": "DM's",
+        "createdAt": "2021-01-10T11:55:02.916Z",
+        "updatedAt": "2021-03-19T15:53:39.410Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "5ffaeb88ad51430015e81083",
+        "name": "Sports",
+        "main": "Reviews",
+        "createdAt": "2021-01-10T11:56:56.303Z",
+        "updatedAt": "2021-03-14T14:20:41.567Z",
+        "__v": 0
+    },
+    {
+        "amount": 25,
+        "_id": "5ffb2c6f8e09370015d16c22",
+        "name": "Recruitment ",
+        "main": "Emails",
+        "createdAt": "2021-01-10T16:33:51.553Z",
+        "updatedAt": "2021-03-30T09:43:15.882Z",
+        "__v": 0
+    },
+    {
+        "amount": 20,
+        "_id": "5ffc9e5c8c877a0015a06f66",
+        "name": "Sponsorships ",
+        "main": "Emails",
+        "createdAt": "2021-01-11T18:52:12.592Z",
+        "updatedAt": "2021-02-28T09:23:29.546Z",
+        "__v": 0
+    },
+    {
+        "amount": 0,
+        "_id": "600c4dae85cc1700153e2dec",
+        "name": "CV Tamplates ",
+        "main": "Emails",
+        "createdAt": "2021-01-23T16:24:14.092Z",
+        "updatedAt": "2021-02-28T09:23:22.774Z",
+        "__v": 0
+    },
+    {
+        "amount": 22,
+        "_id": "60184c44c610f80015701d17",
+        "name": "Studies",
+        "main": "Emails",
+        "createdAt": "2021-02-01T18:45:24.839Z",
+        "updatedAt": "2021-03-21T15:39:47.457Z",
+        "__v": 0
+    },
+    {
+        "amount": 23,
+        "_id": "6037dd7175abfb00155a3989",
+        "name": "General conversation",
+        "main": "DM's",
+        "createdAt": "2021-02-25T17:25:05.865Z",
+        "updatedAt": "2021-03-19T15:44:53.950Z",
+        "__v": 0
+    },
+    {
+        "amount": 3,
+        "_id": "6043b0c12152260015f92d40",
+        "name": "Offerings",
+        "main": "DM's",
+        "createdAt": "2021-03-06T16:41:37.531Z",
+        "updatedAt": "2021-03-18T12:41:06.447Z",
+        "__v": 0
+    },
+    {
+        "amount": 25,
+        "_id": "6044bf8a63baa500153a7692",
+        "name": "Sales",
+        "main": "Emails",
+        "createdAt": "2021-03-07T11:56:58.734Z",
+        "updatedAt": "2021-03-30T11:27:50.737Z",
+        "__v": 0
+    },
+    {
+        "amount": 62,
+        "_id": "604a2adece77db0015f0afe0",
+        "name": "Art",
+        "main": "Comments",
+        "createdAt": "2021-03-11T14:36:14.474Z",
+        "updatedAt": "2021-03-24T13:49:35.521Z",
+        "__v": 0
+    },
+    {
+        "amount": 1,
+        "_id": "604d2bb3e1e85d0015bf14e5",
+        "name": "Video Games",
+        "main": "Reviews",
+        "createdAt": "2021-03-13T21:16:35.183Z",
+        "updatedAt": "2021-03-14T14:10:01.446Z",
+        "__v": 0
+    },
+    {
+        "amount": 4,
+        "_id": "604f1a941ca1ec00150a7bc9",
+        "name": "Follow Ups",
+        "main": "DM's",
+        "createdAt": "2021-03-15T08:28:04.667Z",
+        "updatedAt": "2021-03-15T08:45:12.340Z",
+        "__v": 0
+    },
+    {
+        "amount": 4,
+        "_id": "60533ec2f706090015b5a0de",
+        "name": "Reminders",
+        "main": "DM's",
+        "createdAt": "2021-03-18T11:51:30.745Z",
+        "updatedAt": "2021-03-18T13:14:43.852Z",
+        "__v": 0
+    },
+    {
+        "amount": 2,
+        "_id": "6053430ef706090015b5a0e7",
+        "name": "Electronics",
+        "main": "Reviews",
+        "createdAt": "2021-03-18T12:09:50.708Z",
+        "updatedAt": "2021-03-18T12:17:31.580Z",
+        "__v": 0
+    },
+    {
+        "amount": 21,
+        "_id": "6057131e443c81001516759e",
+        "name": "Sopport",
+        "main": "Emails",
+        "createdAt": "2021-03-21T09:34:22.982Z",
+        "updatedAt": "2021-03-22T10:30:13.867Z",
+        "__v": 0
+    },
+    {
+        "amount": 0,
+        "_id": "605b395146d88d001535cc6d",
+        "name": "K.I.S.S",
+        "main": "Emails",
+        "createdAt": "2021-03-24T13:06:25.564Z",
+        "updatedAt": "2021-03-24T13:06:25.564Z",
+        "__v": 0
+    }
+]
