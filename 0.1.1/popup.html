@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OtterWriter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="./styles/old.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+    <div style="width: 100%;" class="container">
+        <div style="width: 100%;" class="sb-example-3 animate__animated animate__fadeIn">
+
+            <div id="top_bar1">
+                <div class="hambarger_icon_wrapper" id="hmbrgr_open">
+                    <img src="./icons/hambarger.svg" alt="">
+                </div>
+
+                <div class="middle_area">
+                    <img src="./favicon.png" alt="">
+                    <h1>OtterWriter</h1>
+                </div>
+            </div>
+            <div class="search__container" id="search-bar">
+                <div class="inner">
+                    <input autocomplete="off" class="search__input" id="myInput" type="text"
+                        placeholder="Search for template">
+                </div>
+            </div>
+            <div id="searchOptions">
+                <div class="text-center mt-1 size-14 animate__animated animate__bounceIn" id="main-categories">
+                    <a href="#" id="emails">#Emails</a></li>
+                    <a href="#" id="comments">#Comments</a></li>
+                    <a href="#" id="DMs">#DMs</a></li>
+                    <a href="#" id="reviews">#Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="container mt-1 size-14 animate__animated animate__fadeIn">
+                    <div class="panel panel-primary" style="display: none;" id="tags-results">
+                        <div class="panel-body bg-light shadow-sm" style="max-height: 80px; overflow-y: scroll;">
+                            <ul id="templates"></ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="txt_area_label">Template content goes here</div>
+            <textarea name="" id="result" class=" animate__animated animate__fadeIn"></textarea>
+
+            <div id="bottom_btn_wrapper" style="text-align: right;">
+                <button class="" id="reset"><img src="./icons/reset.png" alt=""> Reset</button>
+                <button id="btn" class="btn btn-dark btn-sm"><b><i class="fas fa-copy mr-2"></i> Copy Text</b></button>
+            </div>
+        </div>
+
+
+
+        <div id="side_portion">
+
+            <div class="side_portion_wrapper">
+                <div id="top_bar2">
+                    <div class="hambarger_icon_wrapper" id="hmbrgr_close">
+                        <img src="./icons/hambarger_close.svg" alt="">
+                    </div>
+
+                    <div class="middle_area">
+                        <img src="./favicon.png" alt="">
+                        <h1>OtterWriter</h1>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <a href="#" class="right_arrow">
+                        <img class="user_icon" src="./icons/profile.svg" alt="">
+                        <p>antorpaulraj33@gmail.com</p>
+                        <img src="./icons/arrow.svg" alt="">
+                    </a>
+                </div>
+
+                <div class="main">
+                    <a href="">
+                        <div class="item">
+                            <img src="./icons/saved_template.svg" alt="">
+                            <p>Saved Templates</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="item">
+                            <img src="./icons/about.svg" alt="">
+                            <p>About</p>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="item">
+                            <img src="./icons/settings.svg" alt="">
+                            <p>Settings</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <script src="popup.js" charset="utf-8"></script>
+
+</body>
+
+</html>

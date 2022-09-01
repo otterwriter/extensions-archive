@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OtterWriter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/old.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+    <div style="width: 100%;" class="container">
+        <div style="width: 100%;" class="sb-example-3 animate__animated animate__fadeIn">
+
+
+            <div class="text-center" id="lock" style="display: none;">
+                <div class="">
+                    <h3 class="mt-0"><b>You are not logged in</b></h3>
+                    <a class="text-primary" href="https://www.otterwriter.com" target="_blank"><b>Login Now</b></a>
+                </div>
+                <img src="./assets/images/sing-in.png" width="300" alt="">
+
+            </div>
+            <div id="content">
+                <div id="top_bar1">
+
+                    <div class="hambarger_icon_wrapper" id="hmbrgr_open">
+                        <img src="./assets/images/hambarger.svg" alt="">
+                    </div>
+
+                    <div class="middle_area">
+                        <img src="./assets/images/favicon.png" alt="">
+                        <h1>OtterWriter</h1>
+                    </div>
+                </div>
+                <div class="form-group mt-5">
+                    <label for="">Templates</label>
+                    <select name="" id="templates" class="form-control selectpicker" data-live-search="true">
+                        <option value="-" disabled selected>...</option>
+                    </select>
+                    <div id="credit" style="display: none; padding: 4px;">
+                        <small>Category: <b><span id="username" class="text-primary"></span><small><span id="author" style="margin-top:2.6px ;display: none; float: right;"></span></small></b></small>
+                    </div>
+
+                </div>
+
+
+                <div class="txt_area_label">Template content goes here</div>
+                <textarea name="" rows="12" id="result" class=" animate__animated animate__fadeIn"></textarea>
+
+                <div id="bottom_btn_wrapper" style="text-align: right;">
+                    <button class="" id="reset"><img src="./assets/images/reset.png" alt=""> Reset</button>
+                    <button id="btn" class="btn btn-dark btn-sm"><b><i class="fas fa-copy mr-2"></i> Copy
+                            Text</b></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="side_portion">
+
+            <div class="side_portion_wrapper">
+                <div id="top_bar2">
+                    <div class="hambarger_icon_wrapper" id="hmbrgr_close">
+                        <img src="./assets/images/hambarger_close.svg" alt="">
+                    </div>
+
+                    <div class="middle_area">
+                        <img src="./assets/images/favicon.png" alt="">
+                        <h1>OtterWriter</h1>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <a href="https://www.otterwriter.com/profile" target="_blank" class="right_arrow">
+                        <img class="user_icon" src="./assets/images/profile.svg" alt="">
+                        <p id="email">test@gmail.com</p>
+                        <!-- <img src="./assets/images/arrow.svg" alt=""> -->
+                    </a>
+                </div>
+
+                <div class="main">
+                    <a href="popup.html">
+                        <div class="item">
+                            <img src="./assets/images/bookmark.png" alt="">
+                            <p>All Templates</p>
+                        </div>
+                    </a>
+                    <a href="saved.html">
+                        <div class="item">
+                            <img src="./assets/images/saved_template.svg" alt="">
+                            <p>Saved Templates</p>
+                        </div>
+                    </a>
+                    <a href="add.html">
+                        <div class="item">
+                            <img src="./assets/images/add.png" alt="">
+                            <p>Add New Template</p>
+                        </div>
+                    </a>
+                    <a href="share_reload.html">
+                        <div class="item">
+                            <img src="./assets/images/share.png" alt="">
+                            <p>Share/Reload Templates</p>
+                        </div>
+                    </a>
+                    <a href="vars.html">
+                        <div class="item">
+                            <img src="./assets/images/puzzle.png" alt="">
+                            <p>Variables</p>
+                        </div>
+                    </a>
+                    <a href="https://www.otterwriter.com/story" target="_blank">
+                        <div class="item">
+                            <img src="./assets/images/script.png" alt="">
+                            <p>Our Story</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.otterwriter.com/terms" target="_blank">
+                        <div class="item">
+                            <img src="./assets/images/settings.svg" alt="">
+                            <p>Terms & Conditions</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="./assets/js/utils.js" charset="utf-8"></script>
+    <script src="./assets/js/sidebar.js" charset="utf-8"></script>
+    <script src="./assets/js/popup.js" charset="utf-8"></script>
+
+</body>
+
+</html>

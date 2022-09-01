@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OtterWriter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./styles/old.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+    <div style="width: 100%;" class="container">
+        <div style="width: 100%;" class="sb-example-3 animate__animated animate__fadeIn">
+
+            <div id="top_bar1">
+                <div class="hambarger_icon_wrapper" id="hmbrgr_open">
+                </div>
+
+                <div class="middle_area">
+                    <img src="./favicon.png" alt="">
+                    <h1>OtterWriter <small>for twitch</small></h1>
+                </div>
+            </div>
+
+            <div class="form-group mt-5">
+                <label for="">Templates</label>
+                <select name="" id="templates" class="form-control selectpicker" data-live-search="true">
+                    <option value="-" disabled selected>...</option>
+                </select>
+                <div id="credit" style="display: none; padding: 4px;">
+                    <small>By <b><span id="username" class="text-primary"></span></b></small>
+                </div>
+
+            </div>
+
+
+            <div class="txt_area_label">Template content goes here</div>
+            <textarea name="" id="result" class=" animate__animated animate__fadeIn"></textarea>
+
+            <div id="bottom_btn_wrapper" style="text-align: right;">
+                <button class="" id="reset"><img src="./icons/reset.png" alt=""> Reset</button>
+                <button id="btn" class="btn btn-dark btn-sm"><b><i class="fas fa-copy mr-2"></i> Copy Text</b></button>
+            </div>
+        </div>
+
+        <script src="popup.js" charset="utf-8"></script>
+
+</body>
+
+</html>

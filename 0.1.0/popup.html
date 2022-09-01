@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>IntroMe</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+  <div class="container p-4">
+    <div class="sb-example-3 animate__animated animate__fadeIn">
+      <div class="search__container" id="search-bar">
+        <input class="search__input" id="myInput" type="text" placeholder="Search for template">
+      </div>
+      <div id="searchOptions">
+        <div class="text-center mt-1 size-14 animate__animated animate__bounceIn" id="main-categories">
+          <a href="#" id="emails" class="mr-3">#Emails</a></li>
+          <a href="#" id="comments" class="mr-3">#Comments</a></li>
+          <a href="#" id="DMs" class="mr-3">#DMs</a></li>
+          <a href="#" id="reviews">#Reviews</a></li>
+          </ul>
+        </div>
+        <div class="container mt-1 size-14 animate__animated animate__fadeIn">  
+          <div class="panel panel-primary" style="display: none;" id="tags-results">
+            <div class="panel-body bg-light shadow-sm" style="max-height: 100px;overflow-y: scroll;">
+              <ul id="templates"></ul>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+
+      <hr class="animate__animated animate__fadeIn">
+
+      <textarea name="" id="result" class="border-0 form-control bg-light shadow animate__animated animate__fadeIn"
+        cols="30" rows="10" placeholder="Template content goes here"></textarea>
+      <div class="pt-4 text-right">
+        <button id="btn" class="btn btn-dark btn-sm"><b><i class="fas fa-copy mr-2"></i> Copy Text</b></button>
+      </div>
+    </div>
+
+    <script src="popup.js" charset="utf-8"></script>
+</body>
+
+</html>

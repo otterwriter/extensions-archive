@@ -1,0 +1,32 @@
+{
+  "name": "OtterWriter - Get Amazing Templates",
+  "version": "1.1",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "./assets/js/content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "OtterWriter"
+  },
+  "background": {
+    "scripts": [
+      "./assets/js/background.js"
+    ]
+  },
+  "icons": {
+    "16": "./assets/images/logo.png",
+    "48": "./assets/images/logo.png",
+    "128": "./assets/images/logo.png"
+  },
+  "permissions": [
+    "https://back-office-otterwriter.herokuapp.com/api/v1/",
+    "http://*/*",
+    "https://*/*"
+  ]
+}

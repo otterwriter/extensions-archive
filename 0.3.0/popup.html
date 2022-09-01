@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OtterWriter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/old.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+    <div style="width: 100%;" class="container">
+        <div style="width: 100%;" class="sb-example-3 animate__animated animate__fadeIn">
+            <div id="content">
+                <div id="top_bar1">
+
+                    <div class="hambarger_icon_wrapper" id="hmbrgr_open">
+                        <img src="./assets/images/hambarger.svg" alt="">
+                    </div>
+
+                    <div class="middle_area">
+                        <img src="./assets/images/favicon.png" alt="">
+                        <h1>OtterWriter</h1>
+                    </div>
+                </div>
+
+
+                <div id="search_tab">
+                    <label for="search-bar" class="mt-10">Templates</label>
+                    <div class="search__container" id="search-bar">
+                        <div class="inner">
+                            <input autocomplete="off" class="search__input" id="myInput" type="text"
+                                placeholder="Search for template">
+                        </div>
+                    </div>
+
+                    <div id="searchOptions">
+                        <div class="container mt-1 size-14 animate__animated animate__fadeIn">
+                            <div class="panel panel-primary" style="display: none;" id="tags-results">
+                                <div class="panel-body bg-light"
+                                    style="max-height: 50px; overflow-y: scroll;">
+                                    <ul id="templates"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mine_tab">
+                    <div class="form-group mt-5 mb-13">
+                        <label for="mineTemplates" class="mt-10">Templates</label>
+                        <select name="" id="mineTemplates" class="form-control selectpicker" data-live-search="true">
+                            <option value="-" disabled selected>My Templates</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="favorites_tab">
+                    <div class="form-group mt-5 mb-13">
+                        <label for="favoritesTemplates" class="mt-10">Templates</label>
+                        <select name="" id="favoritesTemplates" class="form-control selectpicker" data-live-search="true">
+                            <option value="-" disabled selected>My Favorites</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="all_tab">
+                    <div class="form-group mt-5 mb-13">
+                        <label for="templatesDrop" class="mt-10">Templates</label>
+                        <select name="" id="templatesDrop" class="form-control selectpicker" data-live-search="true">
+                            <option value="-" disabled selected>All Templates</option>
+                        </select>
+                    </div>
+                </div>                
+
+                <div class="view_type">
+                    <input type="radio" name="view" id="search" value="search" class="select_view" checked>
+                    <label for="search" class="select_view_title">Search</label>
+                    
+                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="mine"
+                        value="mine">
+                    <label for="mine" class="select_view_title">Mine</label>
+
+                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="favorites"
+                        value="favorites">
+                    <label for="favorites" class="select_view_title">Favorites</label>
+                    
+                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="all"
+                        value="all">
+                    <label for="all" class="select_view_title">All</label>
+
+                </div>
+                <div id="credit" style="display: none; padding: 4px;">
+                    <small>Category: <b><span id="username" class="text-primary"></span><small><span id="author"
+                                    style="margin-top:2.6px ;display: none; float: right;"></span></small></b></small>
+                </div>
+                <textarea name="" rows="12" id="result" placeholder="Template content goes here"></textarea>
+                
+                <div id="bottom_btn_wrapper">
+                    <button class="btn btn-light" id="" disabled>🚀 <span style="margin-left: 3px"><b>Save</b></span></button>
+                    <button id="btn" class="btn btn-dark">📝 <span style="margin-left: 3px"><b>Copy
+                            Text</b></span></button>
+                </div>
+                <div id="tip">
+                    🌟 Tip: <span id="tip-content">share your templates with your friends -> <a href="/share.html">here</a></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="side_portion">
+
+            <div class="side_portion_wrapper">
+                <div id="top_bar2">
+                    <div class="hambarger_icon_wrapper" id="hmbrgr_close">
+                        <img src="./assets/images/hambarger_close.svg" alt="">
+                    </div>
+
+                    <div class="middle_area">
+                        <img src="./assets/images/favicon.png" alt="">
+                        <h1>OtterWriter</h1>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <a href="https://www.otterwriter.com/profile" target="_blank" class="right_arrow">
+                        <img class="user_icon" src="./assets/images/profile.svg" alt="">
+                        <p id="email">test@gmail.com</p>
+                        <!-- <img src="./assets/images/arrow.svg" alt=""> -->
+                    </a>
+                </div>
+
+                <div class="main">
+                    <a href="popup.html">
+                        <div class="item">
+                            <img src="./assets/images/bookmark.png" alt="">
+                            <p>All Templates</p>
+                        </div>
+                    </a>
+                    <a href="saved.html">
+                        <div class="item">
+                            <img src="./assets/images/saved_template.svg" alt="">
+                            <p>Saved Templates</p>
+                        </div>
+                    </a>
+                    <a href="add.html">
+                        <div class="item">
+                            <img src="./assets/images/add.png" alt="">
+                            <p>Add New Template</p>
+                        </div>
+                    </a>
+                    <a href="share_reload.html">
+                        <div class="item">
+                            <img src="./assets/images/share.png" alt="">
+                            <p>Share/Reload Templates</p>
+                        </div>
+                    </a>
+                    <a href="vars.html">
+                        <div class="item">
+                            <img src="./assets/images/puzzle.png" alt="">
+                            <p>Variables</p>
+                        </div>
+                    </a>
+                    <a href="https://www.otterwriter.com/story" target="_blank">
+                        <div class="item">
+                            <img src="./assets/images/script.png" alt="">
+                            <p>Our Story</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.otterwriter.com/terms" target="_blank">
+                        <div class="item">
+                            <img src="./assets/images/settings.svg" alt="">
+                            <p>Terms & Conditions</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./assets/js/utils.js" charset="utf-8"></script>
+    <script src="./assets/js/sidebar.js" charset="utf-8"></script>
+    <script src="./assets/js/popup.js" charset="utf-8"></script>
+
+</body>
+
+</html>
