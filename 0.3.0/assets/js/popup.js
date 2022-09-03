@@ -1,3 +1,5 @@
+/* === ui elementes === */
+
 const templateName = document.getElementById("templatesDrop");
 const favoritesTemplates = document.getElementById("favoritesTemplates");
 const mineTemplates = document.getElementById("mineTemplates");
@@ -13,16 +15,10 @@ const favorites_tab = document.getElementById("favorites_tab");
 const mine_tab = document.getElementById("mine_tab");
 const views = document.querySelectorAll('input[name="view"]');
 const searchInput = document.getElementById("myInput");
-// const saveToFavoritesBtn = document.getElementById("saveToFavoritesBtn");
 
-let userTemplates = [];
-let vars = {};
-let templatesTitle = [];
+/* === ui rendering === */
 
-// saveToFavoritesBtn.addEventListener('click', async () => {
-//     saveToFavorites()
-// })
-
+/* tabs */
 views[0].addEventListener('change', async (e) => {
     await tabsOff()
     search_tab.style.display = 'block';
@@ -55,6 +51,53 @@ mineTemplates.addEventListener('change', (e) => {
     y(e);
 })
 
+const tabsOff = async () => {
+    all_tab.style.display = 'none';
+    search_tab.style.display = 'none';
+    favorites_tab.style.display = 'none';
+    mine_tab.style.display = 'none';
+    reset();
+}
+
+const displayFirstTabsOff = async () => {
+    all_tab.style.display = 'none';
+    favorites_tab.style.display = 'none';
+    mine_tab.style.display = 'none';
+}
+
+/* dropdown setup */
+const createNewOptionGroup = async (optgroup, subject) => {
+    optgroup.label = subject;
+    templateName.add(optgroup);
+}
+
+const createNewOption = (optgroup, elm) => {
+    const option = document.createElement("option");
+    option.text = elm.name;
+    let date = new Date();
+    date.setDate(date.getDate() - 14);
+    if (date < new Date(elm.createdAt)) {
+        option.text =  option.text + ' 👋';
+    }
+    option.value = elm._id;
+    optgroup.append(option);
+}
+
+const setResult = async (choosenTemplate) => {
+    result.value = await changeVars(choosenTemplate);
+}
+
+/* reset all ui elements */
+const reset = async () => {
+    templateName.value = '-';
+    favoritesTemplates.value = '-';
+    mineTemplates.value = '-';
+    searchInput.value = '';
+    result.value = '';
+    credit.style.display = 'none';
+}
+
+/* filter and show result */
 const x = (e) => {
     let choosenTemplate = templates.filter(elm => elm._id == e.target.value)[0];
     if (choosenTemplate) {
@@ -84,23 +127,21 @@ const y = (e) => {
     setResult(choosenTemplate.text);
 }
 
+const showResult = async (title) => {
+    const x = document.getElementById("result")
+    let text = 'Waiting ...';
+    templates.forEach(elm => {
 
-const tabsOff = async () => {
-    all_tab.style.display = 'none';
-    search_tab.style.display = 'none';
-    favorites_tab.style.display = 'none';
-    mine_tab.style.display = 'none';
-    reset();
+        if (elm.name == title) {
+            saveCurrentTemplate(elm);
+            text = elm.text
+        }
+    })
+
+    x.innerHTML = await setResult(text);
 }
 
-const reset = async () => {
-    templateName.value = '-';
-    favoritesTemplates.value = '-';
-    mineTemplates.value = '-';
-    searchInput.value = '';
-    result.value = '';
-    credit.style.display = 'none';
-}
+/* === autocomplete === */
 
 const autocomplete = (inp, arr) => {
     let currentFocus;
@@ -226,23 +267,20 @@ const autocomplete = (inp, arr) => {
 
 autocomplete(searchInput, templatesTitle);
 
-const showResult = async (title) => {
-    const x = document.getElementById("result")
-    let text = 'Waiting ...';
-    templates.forEach(elm => {
+/* === fetching templates and user data === */
 
-        if (elm.name == title) {
-            saveCurrentTemplate(elm);
-            text = elm.text
-        }
-    })
-
-    x.innerHTML = await setResult(text);
+const getGlobalTemplates = async () => {
+    return apiCalls("getAllTemplates");
 }
 
-const setResult = async (choosenTemplate) => {
-    result.value = await changeVars(choosenTemplate);
+const getAllTemplates = async () => {
+    let templates = await getGlobalTemplates();
+    templates = await sortTemplatesByName(templates);
+    templates = await sortTemplatesBySub(templates);
+    return templates;
 }
+
+/* === data processing === */
 
 const changeVars = async (text) => {
     if (vars.firstName && vars.lastName)
@@ -282,62 +320,6 @@ const replaceAll = async (text, replacement, value) => {
     return text;
 }
 
-copyBtn.addEventListener("click", function (e) {
-    result.select();
-    result.setSelectionRange(0, 99999);
-
-    document.execCommand("copy");
-})
-
-const getGlobalTemplates = async () => {
-    return fetch(`https://back-office-otterwriter.herokuapp.com/api/v1/templates?uid=sdlMdkL8inN8arfYFXUMhWoKdPk2&k=65688d62-2536-432d-bbd2-23b80cc55a3c`).then(r => r.json()).then(result => {
-        return result;
-    })
-}
-
-const saveToFavorites = async () => {
-    const currentTemplate = await getCurrentTemplate();
-    const favoritesTemplatesArray = await getFavorites();
-    const found = await favoritesTemplatesArray.find(elm => elm._id === currentTemplate._id);
-    if (!found) {
-        const templates = [...favoritesTemplatesArray, currentTemplate];
-        localStorage.setItem('favoritesTemplates', JSON.stringify(templates));
-        createNewOption(favoritesTemplates, currentTemplate);
-    }
-
-}
-
-const getFavorites = async () => {
-    const templates = localStorage.getItem('favoritesTemplates');
-    if (templates === null) {
-        return [];
-    }
-    return JSON.parse(templates);
-}
-
-const createNewOption = (optgroup, elm) => {
-    const option = document.createElement("option");
-    option.text = elm.name;
-    let date = new Date();
-    date.setDate(date.getDate() - 14);
-    if (date < new Date(elm.createdAt)) {
-        option.text =  option.text + ' 👋';
-    }
-    option.value = elm._id;
-    optgroup.append(option);
-}
-
-const createNewOptionGroup = async (optgroup, subject) => {
-    optgroup.label = subject;
-    templateName.add(optgroup);
-}
-
-const displayFirstTabsOff = async () => {
-    all_tab.style.display = 'none';
-    favorites_tab.style.display = 'none';
-    mine_tab.style.display = 'none';
-}
-
 const sortTemplatesByName = async (templates) => templates.sort((a, b) => greater(a.name, b.name));
 const sortTemplatesBySub = async (templates) => templates.sort((a, b) => greater(a.sub, b.sub));
 
@@ -347,20 +329,29 @@ const setTemplateTitles = async (templates) => {
     }
 }
 
-const getAllTemplates = async () => {
-    let templates = await getGlobalTemplates();
-    templates = await sortTemplatesByName(templates);
-    templates = await sortTemplatesBySub(templates);
-    return templates;
-}
+/* === functionality === */
+
+let userTemplates = [];
+let vars = {};
+let templatesTitle = [];
+
+copyBtn.addEventListener("click", function (e) {
+    result.select();
+    result.setSelectionRange(0, 99999);
+
+    document.execCommand("copy");
+})
+
+/* === main === */
 
 (async () => {
     await displayFirstTabsOff();
 
     templates = await getAllTemplates();
-    vars = await getUserVars();
+    console.log(templates)
+    // vars = await getUserVars();
 
-    userTemplates = await getUserTemplates();
+    // userTemplates = await getUserTemplates();
     userTemplates = await sortTemplatesByName(userTemplates);
 
     await setTemplateTitles(templates)
