@@ -335,6 +335,7 @@ let userTemplates = [];
 let vars = {};
 let templatesTitle = [];
 
+/* copy to clipboard */
 copyBtn.addEventListener("click", function (e) {
     result.select();
     result.setSelectionRange(0, 99999);
