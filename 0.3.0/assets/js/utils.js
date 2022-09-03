@@ -17,19 +17,6 @@ const greater = (a, b) => {
     return 0;
 }
 
-
-const getUserTemplates = async () => {
-    const templates = localStorage.getItem('templates');
-    if (templates === null) {
-        return [];
-    }
-    return JSON.parse(templates);
-}
-
-const saveUserTemplates = async (templates) => {
-    localStorage.setItem('templates', JSON.stringify(templates));
-}
-
 const getCurrentTemplate = async () => {
     const template = localStorage.getItem('currentResultTemplate');
     if (template === null) {
@@ -40,14 +27,6 @@ const getCurrentTemplate = async () => {
 
 const saveCurrentTemplate = async (template) => {
     localStorage.setItem('currentResultTemplate', JSON.stringify(template));
-}
-
-const getUserVars = async () => {
-    const templates = localStorage.getItem('vars');
-    if (templates === null) {
-        return {};
-    }
-    return JSON.parse(templates);
 }
 
 const setCookie = async () => {
@@ -67,7 +46,6 @@ const setCookie = async () => {
 
     })
 }
-
 
 const lock = () => {
     document.getElementById('lock').style.display = 'block';
