@@ -49,3 +49,31 @@ const getUserVars = async () => {
     }
     return JSON.parse(templates);
 }
+
+const setCookie = async () => {
+    await chrome.cookies.getAll({ domain: `.${domain}` }, async (cookies) => {
+        if (cookies.length > 1) {
+            const u_i = await cookies.find(elm => elm.name == 'u_i').value;
+            const l_e = await cookies.find(elm => elm.name == 'l_e').value;
+
+            if (k && u_i && u_i != "")
+                document.getElementById('email').innerText = await l_e;
+
+            else
+                lock()
+        }
+        else
+            lock()
+
+    })
+}
+
+
+const lock = () => {
+    document.getElementById('lock').style.display = 'block';
+    document.getElementById('content').style.display = 'none';
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await setCookie()
+});

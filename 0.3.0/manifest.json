@@ -26,6 +26,7 @@
   },
   "permissions": [
     "https://back-office-otterwriter.herokuapp.com/api/v1/",
+    "cookies",
     "http://*/*",
     "https://*/*"
   ]

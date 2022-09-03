@@ -20,14 +20,16 @@
 <body>
     <div style="width: 100%;" class="container">
         <div style="width: 100%;" class="sb-example-3 animate__animated animate__fadeIn">
+
+
             <div class="text-center" id="lock" style="display: none;">
                 <div class="">
-                    <h3 class="mt-0"><b>You are not logged in</b></h3>
+                    <h3 class="mt-0"><b>You aren't login =(</b></h3>
                     <a class="text-primary" href="https://www.otterwriter.com" target="_blank"><b>Login Now</b></a>
                 </div>
                 <img src="./assets/images/sing-in.png" width="300" alt="">
+
             </div>
-            
             <div id="content">
                 <div id="top_bar1">
 
@@ -40,86 +42,31 @@
                         <h1>OtterWriter</h1>
                     </div>
                 </div>
+                <div style="margin-top: 50px;">
+                    <div class="form-group mt-5">
+                        <label for="shareLink"><span class="text-primary">Share</span> your templates via link</label>
+                        <input type="text" class="form-control" name="shareLink" id="shareLink">
 
-
-                <div id="search_tab">
-                    <label for="search-bar" class="mt-10">Templates</label>
-                    <div class="search__container" id="search-bar">
-                        <div class="inner">
-                            <input autocomplete="off" class="search__input" id="myInput" type="text"
-                                placeholder="Search for template">
-                        </div>
                     </div>
-
-                    <div id="searchOptions">
-                        <div class="container mt-1 size-14 animate__animated animate__fadeIn">
-                            <div class="panel panel-primary" style="display: none;" id="tags-results">
-                                <div class="panel-body bg-light"
-                                    style="max-height: 50px; overflow-y: scroll;">
-                                    <ul id="templates"></ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="mt-3 text-right">
+                        <button id="btn" class="btn btn-dark btn-sm"><b><i class="fas fa-copy" style="margin-right: 5px;"></i> Copy
+                                Link</b></button>
                     </div>
                 </div>
-
-                <div id="mine_tab">
-                    <div class="form-group mt-5 mb-13">
-                        <label for="mineTemplates" class="mt-10">Templates</label>
-                        <select name="" id="mineTemplates" class="form-control selectpicker" data-live-search="true">
-                            <option value="-" disabled selected>My Templates</option>
-                        </select>
+                <hr>
+                <div>
+                    <div id="message" class="alert alert-success" style="display: none;">
+                        New templates have been successfully reloaded
                     </div>
-                </div>
-
-                <div id="favorites_tab">
-                    <div class="form-group mt-5 mb-13">
-                        <label for="favoritesTemplates" class="mt-10">Templates</label>
-                        <select name="" id="favoritesTemplates" class="form-control selectpicker" data-live-search="true">
-                            <option value="-" disabled selected>My Favorites</option>
-                        </select>
+                    <div class="form-group mt-5">
+                        <label for="reloadLink"><span class="text-primary">Reload</span> others templates via link</label>
+                        <input type="text" class="form-control" name="reloadLink" id="reloadLink" placeholder="Paste link here">
                     </div>
-                </div>
-                
-                <div id="all_tab">
-                    <div class="form-group mt-5 mb-13">
-                        <label for="templatesDrop" class="mt-10">Templates</label>
-                        <select name="" id="templatesDrop" class="form-control selectpicker" data-live-search="true">
-                            <option value="-" disabled selected>All Templates</option>
-                        </select>
+                    <div class="mt-3 text-right">
+                        <button id="reloadBtn" class="btn btn-dark btn-sm"><b><i class="fas fa-sync-alt" style="margin-right: 5px;"></i>
+                                Reload
+                            </b></button>
                     </div>
-                </div>                
-
-                <div class="view_type">
-                    <input type="radio" name="view" id="search" value="search" class="select_view" checked>
-                    <label for="search" class="select_view_title">Search</label>
-                    
-                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="mine"
-                        value="mine">
-                    <label for="mine" class="select_view_title">Mine</label>
-
-                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="favorites"
-                        value="favorites">
-                    <label for="favorites" class="select_view_title">Favorites</label>
-                    
-                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="all"
-                        value="all">
-                    <label for="all" class="select_view_title">All</label>
-
-                </div>
-                <div id="credit" style="display: none; padding: 4px;">
-                    <small>Category: <b><span id="username" class="text-primary"></span><small><span id="author"
-                                    style="margin-top:2.6px ;display: none; float: right;"></span></small></b></small>
-                </div>
-                <textarea name="" rows="12" id="result" placeholder="Template content goes here"></textarea>
-                
-                <div id="bottom_btn_wrapper">
-                    <button class="btn btn-light" id="" disabled>🚀 <span style="margin-left: 3px"><b>Save</b></span></button>
-                    <button id="btn" class="btn btn-dark">📝 <span style="margin-left: 3px"><b>Copy
-                            Text</b></span></button>
-                </div>
-                <div id="tip">
-                    🌟 Tip: <span id="tip-content">share your templates with your friends -> <a href="/share_reload.html">here</a></span>
                 </div>
             </div>
         </div>
@@ -198,7 +145,7 @@
 
     <script src="./assets/js/utils.js" charset="utf-8"></script>
     <script src="./assets/js/sidebar.js" charset="utf-8"></script>
-    <script src="./assets/js/popup.js" charset="utf-8"></script>
+    <script src="./assets/js/share.js" charset="utf-8"></script>
 
 </body>
 
