@@ -51,7 +51,7 @@ resetBtn.addEventListener('click', (e) => {
 })
 
 const renderVars = async () => {
-    fetch(`${API}/api/v1/profiles/vars?uid=${u_i_global}&k=${api_key}`).then(r => r.json()).then(vars => {
+    fetch(`${API_URL}/api/v1/profiles/vars?uid=${u_i_global}&k=${api_key}`).then(r => r.json()).then(vars => {
         firstName.value = vars.firstName ? vars.firstName : null;
         lastName.value = vars.lastName ? vars.lastName : null;
         company.value = vars.company ? vars.company : null;
