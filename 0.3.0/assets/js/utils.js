@@ -1,5 +1,8 @@
 const k = '65688d62-2536-432d-bbd2-23b80cc55a3c';
 const domain = 'www.otterwriter.com';
+const API_PRD_URL = 'https://back-office-otterwriter.herokuapp.com';
+const API_LOCAL_URL = 'http://localhost:8000';
+const API_URL = API_PRD_URL;
 
 const greater = (a, b) => {
     const fa = a.toLowerCase(),

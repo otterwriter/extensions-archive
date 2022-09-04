@@ -19,9 +19,6 @@ const searchInput = document.getElementById("myInput");
 
 /* initial main vars */
 
-const API_PRD_URL = 'https://back-office-otterwriter.herokuapp.com';
-const API_LOCAL_URL = 'http://localhost:8000';
-
 let userTemplates = [];
 let vars = {};
 let templatesTitle = [];
@@ -301,7 +298,7 @@ const execFunction = async (funcName, keys) => {
 }
 
 const sendRequest = async (endpoint, keys) => {
-    return await fetch(`${API_PRD_URL}/api/v1${endpoint}?uid=${keys.u_i}&k=${keys.api_key}`).then(r => r.json()).then(result => {
+    return await fetch(`${API_URL}/api/v1${endpoint}?uid=${keys.u_i}&k=${keys.api_key}`).then(r => r.json()).then(result => {
         return result;
     })
 }
