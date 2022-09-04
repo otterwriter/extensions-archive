@@ -378,8 +378,7 @@ const doubleSort = async (templates) => {
 
         templates = await execFunction('getAllTemplates', keys);
         templates = await doubleSort(templates);
-        await setTemplateTitles(templates)
-
+        await setTemplateTitles(templates);
 
         let optgroup;
 
@@ -404,6 +403,8 @@ const doubleSort = async (templates) => {
         await userSavedTemplates.forEach(elm => {
             createNewOption(mineTemplates, elm);
         })
+
+        vars = userData.vars;
 
     })
 })()
