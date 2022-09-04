@@ -1,3 +1,6 @@
+const k = '65688d62-2536-432d-bbd2-23b80cc55a3c';
+const domain = 'www.otterwriter.com';
+
 const greater = (a, b) => {
     const fa = a.toLowerCase(),
         fb = b.toLowerCase();
