@@ -4,24 +4,41 @@ const global = document.getElementById('global');
 const form = document.getElementById('addTemplate');
 const msg = document.getElementById('message');
 
-const saveTemplate = async (template) => {
-    const currentTemplates = await getUserTemplates();
-    await currentTemplates.push(template);
-    await saveUserTemplates(currentTemplates);
-}
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const template = {
-        name: name.value,
-        text: text.value,
-        id: (new Date()).getTime()
-    };
-    await saveTemplate(template);
-    msg.style.display = "block";
-    name.value = "";
-    text.value = "";
-    global.checked = false;
+
+    await chrome.cookies.getAll({ domain: `.${domain}` }, async (cookies) => {
+        if (cookies.length > 1) {
+            u_i = await cookies.find(elm => elm.name == 'u_i').value;
+            l_e = await cookies.find(elm => elm.name == 'l_e').value;
+            api_key = await cookies.find(elm => elm.name == 'k').value;
+            
+            const data = {
+                name: name.value,
+                text: text.value,
+                global: global.checked,
+                email: l_e
+            };
+
+            const response = await fetch(`${API_URL}/api/v1/templates/add?uid=${u_i}&k=${api_key}`, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(data)
+            }).then(() => {
+                msg.style.display = "block";
+                name.value = "";
+                text.value = "";
+                global.checked = false;
+            })
+        }
+    })
 });
 
 document.getElementById('vars').addEventListener('change', (e) => {
