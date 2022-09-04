@@ -16,6 +16,16 @@ const mine_tab = document.getElementById("mine_tab");
 const views = document.querySelectorAll('input[name="view"]');
 const searchInput = document.getElementById("myInput");
 
+
+/* initial main vars */
+
+const API_PRD_URL = 'https://back-office-otterwriter.herokuapp.com';
+const API_LOCAL_URL = 'http://localhost:8000';
+
+let userTemplates = [];
+let vars = {};
+let templatesTitle = [];
+
 /* === ui rendering === */
 
 /* tabs */
@@ -77,7 +87,7 @@ const createNewOption = (optgroup, elm) => {
     let date = new Date();
     date.setDate(date.getDate() - 14);
     if (date < new Date(elm.createdAt)) {
-        option.text =  option.text + ' 👋';
+        option.text = option.text + ' 👋';
     }
     option.value = elm._id;
     optgroup.append(option);
@@ -123,7 +133,7 @@ const x = (e) => {
 }
 
 const y = (e) => {
-    const choosenTemplate = userTemplates.filter(elm => elm.id == e.target.value)[0];
+    const choosenTemplate = userTemplates.filter(elm => elm._id == e.target.value)[0];
     setResult(choosenTemplate.text);
 }
 
@@ -140,6 +150,16 @@ const showResult = async (title) => {
 
     x.innerHTML = await setResult(text);
 }
+
+/* === functionality === */
+
+/* copy to clipboard */
+copyBtn.addEventListener("click", function (e) {
+    result.select();
+    result.setSelectionRange(0, 99999);
+
+    document.execCommand("copy");
+})
 
 /* === autocomplete === */
 
@@ -258,7 +278,7 @@ const autocomplete = (inp, arr) => {
             .display = "block";
 
     }
-    
+
     document
         .addEventListener("click", function (e) {
             closeAllLists(e.target);
@@ -269,15 +289,21 @@ autocomplete(searchInput, templatesTitle);
 
 /* === fetching templates and user data === */
 
-const getGlobalTemplates = async () => {
-    return apiCalls("getAllTemplates");
+const execFunction = async (funcName, keys) => {
+    switch (funcName) {
+        case "getAllTemplates":
+            return sendRequest('/templates', keys);
+
+        case "getUserData":
+            return sendRequest(`/profiles/one`, keys);
+
+    }
 }
 
-const getAllTemplates = async () => {
-    let templates = await getGlobalTemplates();
-    templates = await sortTemplatesByName(templates);
-    templates = await sortTemplatesBySub(templates);
-    return templates;
+const sendRequest = async (endpoint, keys) => {
+    return await fetch(`${API_PRD_URL}/api/v1${endpoint}?uid=${keys.u_i}&k=${keys.api_key}`).then(r => r.json()).then(result => {
+        return result;
+    })
 }
 
 /* === data processing === */
@@ -329,63 +355,55 @@ const setTemplateTitles = async (templates) => {
     }
 }
 
-/* === functionality === */
-
-let userTemplates = [];
-let vars = {};
-let templatesTitle = [];
-
-/* copy to clipboard */
-copyBtn.addEventListener("click", function (e) {
-    result.select();
-    result.setSelectionRange(0, 99999);
-
-    document.execCommand("copy");
-})
+const doubleSort = async (templates) => {
+    templates = await sortTemplatesByName(templates);
+    templates = await sortTemplatesBySub(templates);
+    return templates;
+}
 
 /* === main === */
 
 (async () => {
     await displayFirstTabsOff();
 
-    templates = await getAllTemplates();
-    console.log(templates)
-    // vars = await getUserVars();
+    await chrome.cookies.getAll({ domain: `${domain}` }, async (cookies) => {
+        if (cookies.length < 1) {
+            return "error";
+        }
 
-    // userTemplates = await getUserTemplates();
-    userTemplates = await sortTemplatesByName(userTemplates);
+        const keys = {};
 
-    await setTemplateTitles(templates)
+        keys.u_i = await cookies.find(elm => elm.name == 'u_i').value;
+        keys.api_key = await cookies.find(elm => elm.name == 'k').value;
 
-    let optgroup;
+        templates = await execFunction('getAllTemplates', keys);
+        templates = await doubleSort(templates);
+        await setTemplateTitles(templates)
 
-    let lastElm = {
-        sub: ''
-    };
 
-    if (templateName) {
-        await templates.forEach(elm => {
-            if (elm.sub != lastElm.sub) {
-                optgroup = document.createElement("optgroup");
-                createNewOptionGroup(optgroup, elm.sub);
-            }
+        let optgroup;
+
+        let lastElm = {
+            sub: ''
+        };
+
+        if (templateName) {
+            await templates.forEach(elm => {
+                if (elm.sub != lastElm.sub) {
+                    optgroup = document.createElement("optgroup");
+                    createNewOptionGroup(optgroup, elm.sub);
+                }
                 createNewOption(optgroup, elm);
                 lastElm = elm;
+            })
+        }
+
+        const userData = await execFunction('getUserData', keys);
+        const userSavedTemplates = await sortTemplatesByName(userData.templates);
+        userTemplates = await userSavedTemplates;
+        await userSavedTemplates.forEach(elm => {
+            createNewOption(mineTemplates, elm);
         })
-    }
 
-    favorites = await getFavorites();
-    favorites = await await sortTemplatesByName(favorites);
-
-    if (favoritesTemplates) await favorites.forEach(elm => createNewOption(favoritesTemplates, elm));
-
-    if (mineTemplates) {
-        await userTemplates.forEach(elm => {
-            const newElm = {
-                name: elm.name,
-                _id: elm.id
-            }
-            createNewOption(mineTemplates, newElm);
-        })
-    }
+    })
 })()
