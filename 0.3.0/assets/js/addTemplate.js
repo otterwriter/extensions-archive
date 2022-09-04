@@ -45,7 +45,7 @@ document.getElementById('vars').addEventListener('change', (e) => {
     insertAtCursor(text, e.target.value)
 })
 
-function insertAtCursor(myField, myValue) {
+const insertAtCursor = (myField, myValue) => {
     //IE support
     if (document.selection) {
         myField.focus();
