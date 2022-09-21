@@ -15,6 +15,10 @@ const favorites_tab = document.getElementById("favorites_tab");
 const mine_tab = document.getElementById("mine_tab");
 const views = document.querySelectorAll('input[name="view"]');
 const searchInput = document.getElementById("myInput");
+const tipDiv = document.getElementById("tip");
+const tipText = document.getElementById("tip-content");
+const tipLink = document.getElementById("tip-link");
+const tipHref = document.getElementById("tip-href");
 
 
 /* initial main vars */
@@ -26,22 +30,22 @@ let templatesTitle = [];
 /* === ui rendering === */
 
 /* tabs */
-views[0].addEventListener('change', async (e) => {
+views[0].addEventListener('change', async(e) => {
     await tabsOff()
     search_tab.style.display = 'block';
 })
 
-views[1].addEventListener('change', async (e) => {
+views[1].addEventListener('change', async(e) => {
     await tabsOff()
     mine_tab.style.display = 'block';
 })
 
-views[2].addEventListener('change', async (e) => {
+views[2].addEventListener('change', async(e) => {
     await tabsOff()
     favorites_tab.style.display = 'block';
 })
 
-views[3].addEventListener('change', async (e) => {
+views[3].addEventListener('change', async(e) => {
     await tabsOff()
     all_tab.style.display = 'block';
 })
@@ -58,7 +62,7 @@ mineTemplates.addEventListener('change', (e) => {
     y(e);
 })
 
-const tabsOff = async () => {
+const tabsOff = async() => {
     all_tab.style.display = 'none';
     search_tab.style.display = 'none';
     favorites_tab.style.display = 'none';
@@ -66,14 +70,14 @@ const tabsOff = async () => {
     reset();
 }
 
-const displayFirstTabsOff = async () => {
+const displayFirstTabsOff = async() => {
     all_tab.style.display = 'none';
     favorites_tab.style.display = 'none';
     mine_tab.style.display = 'none';
 }
 
 /* dropdown setup */
-const createNewOptionGroup = async (optgroup, subject) => {
+const createNewOptionGroup = async(optgroup, subject) => {
     optgroup.label = subject;
     templateName.add(optgroup);
 }
@@ -90,12 +94,12 @@ const createNewOption = (optgroup, elm) => {
     optgroup.append(option);
 }
 
-const setResult = async (choosenTemplate) => {
+const setResult = async(choosenTemplate) => {
     result.value = await changeVars(choosenTemplate);
 }
 
 /* reset all ui elements */
-const reset = async () => {
+const reset = async() => {
     templateName.value = '-';
     favoritesTemplates.value = '-';
     mineTemplates.value = '-';
@@ -115,8 +119,7 @@ const x = (e) => {
             author.style.display = 'block';
         } else
             author.style.display = 'none';
-    }
-    else {
+    } else {
         choosenTemplate = userTemplates.filter(elm => elm.id == e.target.value)[0];
         username.innerHTML = 'My Templates';
         if (choosenTemplate.author != undefined) {
@@ -134,7 +137,7 @@ const y = (e) => {
     setResult(choosenTemplate.text);
 }
 
-const showResult = async (title) => {
+const showResult = async(title) => {
     const x = document.getElementById("result")
     let text = 'Waiting ...';
     templates.forEach(elm => {
@@ -148,10 +151,19 @@ const showResult = async (title) => {
     x.innerHTML = await setResult(text);
 }
 
+const setTip = async(tip) => {
+    tipText.innerText = tip.text;
+    if (tip.link) {
+        tipHref.setAttribute('href', tip.link);
+    }
+    tipDiv.style.display = 'block';
+    tipLink.style.display = 'inline';
+}
+
 /* === functionality === */
 
 /* copy to clipboard */
-copyBtn.addEventListener("click", function (e) {
+copyBtn.addEventListener("click", function(e) {
     result.select();
     result.setSelectionRange(0, 99999);
 
@@ -162,7 +174,7 @@ copyBtn.addEventListener("click", function (e) {
 
 const autocomplete = (inp, arr) => {
     let currentFocus;
-    inp.addEventListener("input", function (e) {
+    inp.addEventListener("input", function(e) {
         var a,
             b,
             i,
@@ -200,7 +212,7 @@ const autocomplete = (inp, arr) => {
                     b.innerHTML += " <span class='badge badge-sm badge-danger' style='font-size: 10px; background-color: #a39bcb; color: white;'>New<span>"
                 }
                 b.innerHTML += "<input type='hidden' value='" + templateName + "'>";
-                b.addEventListener("click", function (e) {
+                b.addEventListener("click", function(e) {
                     inp.value = this.getElementsByTagName("input")[0].value;
                     closeAllLists();
 
@@ -218,7 +230,7 @@ const autocomplete = (inp, arr) => {
         }
     });
 
-    inp.addEventListener("keydown", function (e) {
+    inp.addEventListener("keydown", function(e) {
         var x = document.getElementById(this.id + "autocomplete-list");
         if (x)
             x = x.getElementsByTagName("div");
@@ -277,7 +289,7 @@ const autocomplete = (inp, arr) => {
     }
 
     document
-        .addEventListener("click", function (e) {
+        .addEventListener("click", function(e) {
             closeAllLists(e.target);
         });
 }
@@ -286,7 +298,7 @@ autocomplete(searchInput, templatesTitle);
 
 /* === fetching templates and user data === */
 
-const execFunction = async (funcName, keys) => {
+const execFunction = async(funcName, keys) => {
     switch (funcName) {
         case "getAllTemplates":
             return sendRequest('/templates', keys);
@@ -294,10 +306,13 @@ const execFunction = async (funcName, keys) => {
         case "getUserData":
             return sendRequest(`/profiles/one`, keys);
 
+        case "getOneTip":
+            return sendRequest(`/tips/one`, keys);
+
     }
 }
 
-const sendRequest = async (endpoint, keys) => {
+const sendRequest = async(endpoint, keys) => {
     return await fetch(`${API_URL}/api/v1${endpoint}?uid=${keys.u_i}&k=${keys.api_key}`).then(r => r.json()).then(result => {
         return result;
     })
@@ -305,7 +320,7 @@ const sendRequest = async (endpoint, keys) => {
 
 /* === data processing === */
 
-const changeVars = async (text) => {
+const changeVars = async(text) => {
     if (vars.firstName && vars.lastName)
         text = await replaceAll(text, '[your_name]', `${vars.firstName} ${vars.lastName}`);
 
@@ -329,11 +344,11 @@ const changeVars = async (text) => {
 
     if (vars.phone && vars.email)
         text = text
-            .replace('[contact_information]', vars.phone ? `Email: ${vars.email} | Phone: ${vars.phone}` : vars.email);
+        .replace('[contact_information]', vars.phone ? `Email: ${vars.email} | Phone: ${vars.phone}` : vars.email);
     return text;
 }
 
-const replaceAll = async (text, replacement, value) => {
+const replaceAll = async(text, replacement, value) => {
     text = text
         .replace(replacement, value)
         .replace(replacement, value)
@@ -343,16 +358,16 @@ const replaceAll = async (text, replacement, value) => {
     return text;
 }
 
-const sortTemplatesByName = async (templates) => templates.sort((a, b) => greater(a.name, b.name));
-const sortTemplatesBySub = async (templates) => templates.sort((a, b) => greater(a.sub, b.sub));
+const sortTemplatesByName = async(templates) => templates.sort((a, b) => greater(a.name, b.name));
+const sortTemplatesBySub = async(templates) => templates.sort((a, b) => greater(a.sub, b.sub));
 
-const setTemplateTitles = async (templates) => {
+const setTemplateTitles = async(templates) => {
     for (const template of templates) {
         templatesTitle.push({ name: `${template.name} (${template.sub})`, date: template.createdAt });
     }
 }
 
-const doubleSort = async (templates) => {
+const doubleSort = async(templates) => {
     templates = await sortTemplatesByName(templates);
     templates = await sortTemplatesBySub(templates);
     return templates;
@@ -360,10 +375,10 @@ const doubleSort = async (templates) => {
 
 /* === main === */
 
-(async () => {
+(async() => {
     await displayFirstTabsOff();
 
-    await chrome.cookies.getAll({ domain: `${domain}` }, async (cookies) => {
+    await chrome.cookies.getAll({ domain: `${domain}` }, async(cookies) => {
         if (cookies.length < 1) {
             return "error";
         }
@@ -372,6 +387,9 @@ const doubleSort = async (templates) => {
 
         keys.u_i = await cookies.find(elm => elm.name == 'u_i').value;
         keys.api_key = await cookies.find(elm => elm.name == 'k').value;
+
+        const tip = await execFunction('getOneTip', keys);
+        await setTip(tip);
 
         templates = await execFunction('getAllTemplates', keys);
         templates = await doubleSort(templates);

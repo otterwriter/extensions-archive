@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>OtterWriter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./assets/css/old.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -46,16 +43,14 @@
                     <label for="search-bar" class="mt-10">Templates</label>
                     <div class="search__container" id="search-bar">
                         <div class="inner">
-                            <input autocomplete="off" class="search__input" id="myInput" type="text"
-                                placeholder="Search for template">
+                            <input autocomplete="off" class="search__input" id="myInput" type="text" placeholder="Search for template">
                         </div>
                     </div>
 
                     <div id="searchOptions">
                         <div class="container mt-1 size-14 animate__animated animate__fadeIn">
                             <div class="panel panel-primary" style="display: none;" id="tags-results">
-                                <div class="panel-body bg-light"
-                                    style="max-height: 50px; overflow-y: scroll;">
+                                <div class="panel-body bg-light" style="max-height: 50px; overflow-y: scroll;">
                                     <ul id="templates"></ul>
                                 </div>
                             </div>
@@ -80,7 +75,7 @@
                         </select>
                     </div>
                 </div>
-                
+
                 <div id="all_tab">
                     <div class="form-group mt-5 mb-13">
                         <label for="templatesDrop" class="mt-10">Templates</label>
@@ -88,38 +83,36 @@
                             <option value="-" disabled selected>All Templates</option>
                         </select>
                     </div>
-                </div>                
+                </div>
 
                 <div class="view_type">
                     <input type="radio" name="view" id="search" value="search" class="select_view" checked>
                     <label for="search" class="select_view_title">Search</label>
-                    
-                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="mine"
-                        value="mine">
+
+                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="mine" value="mine">
                     <label for="mine" class="select_view_title">Mine</label>
 
-                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="favorites"
-                        value="favorites">
+                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="favorites" value="favorites">
                     <label for="favorites" class="select_view_title">Favorites</label>
-                    
-                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="all"
-                        value="all">
+
+                    <input type="radio" name="view" style="margin-left: 10px;" class="select_view" id="all" value="all">
                     <label for="all" class="select_view_title">All</label>
 
                 </div>
                 <div id="credit" style="display: none; padding: 4px;">
                     <small>Category: <b><span id="username" class="text-primary"></span><small><span id="author"
-                                    style="margin-top:2.6px ;display: none; float: right;"></span></small></b></small>
+                                    style="margin-top:2.6px ;display: none; float: right;"></span></small></b>
+                    </small>
                 </div>
                 <textarea name="" rows="12" id="result" placeholder="Template content goes here"></textarea>
-                
+
                 <div id="bottom_btn_wrapper">
                     <button class="btn btn-light" id="" disabled>🚀 <span style="margin-left: 3px"><b>Save</b></span></button>
                     <button id="btn" class="btn btn-dark">📝 <span style="margin-left: 3px"><b>Copy
                             Text</b></span></button>
                 </div>
-                <div id="tip">
-                    🌟 Tip: <span id="tip-content">share your templates with your friends -> <a href="/share_reload.html">here</a></span>
+                <div id="tip" style="display: none;">
+                    🌟 Tip: <span id="tip-content">share your templates with your friends</span><span id="tip-link" style="display: none;"> -> <a id="tip-href" class="text-primary" href="/share_reload.html"><b>here</b></a></span>
                 </div>
             </div>
         </div>
